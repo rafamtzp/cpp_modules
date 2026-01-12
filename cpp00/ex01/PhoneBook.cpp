@@ -113,5 +113,4 @@ void PhoneBook::search_contact(void)
 		}
 		display_contact_info(index);
 	}
-	//std::cout << "Index entered: " << index << std::endl;
 }
