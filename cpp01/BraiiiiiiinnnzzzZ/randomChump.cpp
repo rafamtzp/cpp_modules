@@ -2,7 +2,7 @@
 
 void	randomChump(std::string name)
 {
-	Zombie chump;
-
-	
+	Zombie chump(name);
+	chump.announce();
+	return ;
 }
