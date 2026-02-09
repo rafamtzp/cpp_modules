@@ -7,6 +7,7 @@ Zombie::Zombie(std::string name)
 
 Zombie::~Zombie( void )
 {
+	std::cout << name << " destroyed" << std::endl;
 	return ;
 }
 
