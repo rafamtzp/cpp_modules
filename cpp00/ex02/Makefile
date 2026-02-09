@@ -5,12 +5,15 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = Account.cpp tests.cpp
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
