@@ -93,7 +93,8 @@ void PhoneBook::search_contact(void)
 		std::cout << "Please enter an index (or just press ENTER to quit): ";
 		try
 		{
-			std::getline(std::cin, index);
+			if (!std::getline(std::cin, index))
+				return ;
 			if (index.empty())
 				break ;
 			i = 0;
