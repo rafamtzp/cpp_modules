@@ -19,6 +19,7 @@ int main( void ) {
 
 	std::cout << Fixed::max( a, b ) << std::endl;
 	std::cout << Fixed::min(a, b) << std::endl;
+
 	return 0;
 }
 
