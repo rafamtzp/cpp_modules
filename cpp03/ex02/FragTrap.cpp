@@ -1,0 +1,21 @@
+#include "FragTrap.hpp"
+
+FragTrap::FragTrap( void )
+{
+	std::cout << "Fragtrap created" << std::endl;
+}
+
+FragTrap::FragTrap( std::string name )
+{
+	std::cout << "FragTrap " << name << " was created." << std::endl;
+}
+
+FragTrap::~FragTrap( void )
+{
+	std::cout << "FragTrap destroyed" << std::endl;
+}
+
+void	FragTrap::highFivesGuys( void )
+{
+	std::cout << "Who's up for a high five?" << std::endl;
+}
