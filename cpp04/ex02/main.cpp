@@ -22,5 +22,8 @@ int main()
 	delete pets[1];
 	//delete twin_catto;
 
+	// TEST FOR EX02
+	// Animal uninstantiable;
+
 	return 0;
 }
