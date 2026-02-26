@@ -2,25 +2,32 @@
 
 Cat::Cat(void)
 {
-	type = "cat";
 	std::cout << "Cat created"<<std::endl;
+	type = "cat";
+	brain = new Brain;
 }
 
-Cat::Cat( Cat& other )
+Cat::Cat( const Cat& other )
 {
-	type = other.type;
 	std::cout << "Cat copy constructor called" << std::endl;
+	type = other.type;
+	brain = new Brain(*other.brain);
 }
 
 Cat::~Cat( void )
 {
+	delete brain;
 	std::cout << "Cat destroyed" << std::endl;
 }
 
 Cat&	Cat::operator=( const Cat& other )
 {
 	if (this != &other)
+	{
+		delete brain;
+		brain = new Brain(*other.brain);
 		type = other.type;
+	}
 	return (*this);
 }
 
