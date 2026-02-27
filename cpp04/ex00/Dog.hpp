@@ -9,6 +9,6 @@
 			Dog( Dog& other );
 			~Dog( void );
 			Dog&	operator=( const Dog& other );
-			void	makeSound( void ) const;
+			void	makeSound( void ) const override;
 	};
 #endif

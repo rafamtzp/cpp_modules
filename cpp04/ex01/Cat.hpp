@@ -12,6 +12,6 @@
 			Cat( const Cat& other );
 			~Cat( void );
 			Cat&	operator=( const Cat& other );
-			void	makeSound( void ) const;
+			void	makeSound( void ) const override;
 	};
 #endif
