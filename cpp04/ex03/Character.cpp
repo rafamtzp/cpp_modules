@@ -13,7 +13,10 @@ Character::Character(const Character& other)
 	inventory = new AMateria*[4];
 	for (int i = 0; i < 4; i++)
 	{
-		inventory[i] = other.inventory[i]->clone(); // fix this to return nullptr in case !inventory[i]
+		if (other.inventory[i])
+			inventory[i] = other.inventory[i]->clone();
+		else
+			inventory[i] = NULL;
 	}
 	name = other.name;
 	std::cout <<"Character copied"<<std::endl;
@@ -51,7 +54,12 @@ Character&	Character::operator=(const Character& other)
 		delete [] inventory;
 		inventory = new AMateria *[4];
 		for (int i = 0; i < 4; i++)
-			inventory[i] = other.inventory[i]->clone();
+		{
+			if (other.inventory[i])
+				inventory[i] = other.inventory[i]->clone();
+			else
+				inventory[i] = NULL;
+		}
 		name = other.name;
 	}
 	return (*this);

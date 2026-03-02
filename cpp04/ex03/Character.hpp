@@ -6,9 +6,9 @@
 	class Character : public ICharacter
 	{
 		private:
-			AMateria **inventory;
 			std::string name;
 		public:
+			AMateria **inventory;
 			Character(void);
 			Character(const Character& other);
 			Character(const std::string name);
