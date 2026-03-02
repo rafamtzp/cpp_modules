@@ -19,9 +19,7 @@ Ice::Ice(const Ice& other)
 
 void	Ice::use(ICharacter& target)
 {
-	std::cout
-	<<"* shoots ice bolt at "<<target.getName()<<" *"
-	<<std::endl;
+	AMateria::use(target);
 }
 
 AMateria	*Ice::clone() const
