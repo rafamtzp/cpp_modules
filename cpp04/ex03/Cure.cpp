@@ -2,7 +2,7 @@
 
 Cure::Cure(void)
 {
-	type = "Cure";
+	type = "cure";
 	std::cout <<"Cure created"<<std::endl;
 }
 
@@ -13,15 +13,13 @@ Cure::~Cure(void)
 
 Cure::Cure(const Cure& other)
 {
-	type = "Cure";
+	type = "cure";
 	std::cout << "Cure copy created" << std::endl;
 }
 
 void	Cure::use(ICharacter& target)
 {
-	std::cout
-	<<"* heals"<<target.getName()<<"'s wounds *"
-	<<std::endl;
+	AMateria::use(target);
 }
 
 AMateria	*Cure::clone() const
