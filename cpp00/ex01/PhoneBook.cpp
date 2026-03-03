@@ -18,18 +18,26 @@ PhoneBook::~PhoneBook(void)
 
 void PhoneBook::add_contact(void)
 {
-	std::cout << "Please enter their first name: ";
-	getline(std::cin, this->contacts[this->index].firstname);
-	std::cout << "Please enter their last name: ";
-	getline(std::cin, this->contacts[this->index].lastname);
-	std::cout << "Please enter their nickname: ";
-	getline(std::cin, this->contacts[this->index].nickname);
-	std::cout << "Please enter their phone number: ";
-	getline(std::cin, this->contacts[this->index].number);
-	std::cout << "Please enter their darkest secret (shh): ";
-	getline(std::cin, this->contacts[this->index].secret);
-	if (this->contacts[index].has_data())
+	bool is_valid = true;
+	std::string input;
+	std::string fields[5] {
+		"firstname",
+		"lastname",
+		"nickname",
+		"number",
+		"secret"
+	};
+
+	for (int i = 0; i < 5 && is_valid; i++)
+	{
+		std::cout << "Please enter their "<<fields[i]<<": ";
+		getline(std::cin, input);
+		is_valid = contacts[index].setField(fields[i], input);
+	}
+	if (is_valid)
 		this->index++;
+	else
+		std::cout << "(!!)Invalid entry (non-ascii or empty).\nPlease try again"<<std::endl;
 	if (this->index == 8)
 		this->index = 0;
 }
@@ -51,11 +59,11 @@ void PhoneBook::display_contact_info(std::string index)
 	{
 		std::cout << "Contact Info:" << std::endl
 		<< std::string(13, '-') << std::endl
-		<< "First name: " << this->contacts[i].firstname << std::endl
-		<< "Last name: " << this->contacts[i].lastname << std::endl
-		<< "Nickname: " << this->contacts[i].nickname << std::endl
-		<< "Phone number: " << this->contacts[i].number << std::endl
-		<< "Secret (shh): " << this->contacts[i].number << std::endl;
+		<< "First name: " << this->contacts[i].getField("firstname") << std::endl
+		<< "Last name: " << this->contacts[i].getField("lastname") << std::endl
+		<< "Nickname: " << this->contacts[i].getField("nickname") << std::endl
+		<< "Phone number: " << this->contacts[i].getField("number") << std::endl
+		<< "Secret (shh): " << this->contacts[i].getField("secret") << std::endl;
 	}
 	return ;
 }
@@ -75,9 +83,9 @@ void PhoneBook::display_table(void)
 		{
 			std::cout 
 			<< std::right << "|" << std::setw(10) << (char)(i + 48)
-			<< std::right << "|" << std::setw(10) << truncate_entry(this->contacts[i].firstname)
-			<< std::right << "|" << std::setw(10) << truncate_entry(this->contacts[i].lastname)
-			<< std::right << "|" << std::setw(10) << truncate_entry(this->contacts[i].nickname)
+			<< std::right << "|" << std::setw(10) << truncate_entry(contacts[i].getField("firstname"))
+			<< std::right << "|" << std::setw(10) << truncate_entry(contacts[i].getField("lastname"))
+			<< std::right << "|" << std::setw(10) << truncate_entry(contacts[i].getField("nickname"))
 			<< "|" << std::endl << std::string(45, '-') << std::endl;
 		}
 	}
@@ -98,13 +106,8 @@ void PhoneBook::search_contact(void)
 				return ;
 			if (index.empty())
 				break ;
-			i = 0;
-			while (i < (int)index.length() && index.at(i) == ' ')
-			 	i++;
-			if (i >= (int)index.length() || !isdigit(index.at(i)))
-				throw std::invalid_argument("Invalid argument.");
-			else if (atoi(index.c_str()) > 7)
-				throw std::invalid_argument("Can only search indices 0-7.");
+			if (index.length() > 1 || !isdigit(index.at(0)))
+				throw std::invalid_argument("Invalid. Single digit only");
 			else if (!this->contacts[atoi(index.c_str())].has_data())
 				throw std::invalid_argument("Index not in list.");
 		}
