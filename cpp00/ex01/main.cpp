@@ -1,6 +1,12 @@
 #include <iostream>
 #include "PhoneBook.hpp"
 
+std::string	uppercase(std::string s)
+{
+	for (int i = 0; i < s.length(); i++)
+		s[i] = std::toupper(s[i]);
+	return s;
+}
 
 int main(void)
 {
@@ -14,11 +20,11 @@ int main(void)
 		std::cout << "> Please type an action (ADD, SEARCH, or EXIT): ";
 		if (!std::getline(std::cin, action))
 			return (1);
-		if (action == "ADD")
+		if (uppercase(action) == "ADD")
 			phonebook.add_contact();
-		else if (action == "SEARCH")
+		else if (uppercase(action) == "SEARCH")
 			phonebook.search_contact();
-		else if (action == "EXIT")
+		else if (uppercase(action) == "EXIT")
 			break ;
 	}
 }

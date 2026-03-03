@@ -28,7 +28,8 @@ void PhoneBook::add_contact(void)
 	getline(std::cin, this->contacts[this->index].number);
 	std::cout << "Please enter their darkest secret (shh): ";
 	getline(std::cin, this->contacts[this->index].secret);
-	this->index++;
+	if (this->contacts[index].has_data())
+		this->index++;
 	if (this->index == 8)
 		this->index = 0;
 }
@@ -112,6 +113,7 @@ void PhoneBook::search_contact(void)
 			std::cout << err.what() << " Please try again." << std::endl;
 			index = "\n";
 		}
-		display_contact_info(index);
+		if (index != "\n")
+			display_contact_info(index);
 	}
 }
