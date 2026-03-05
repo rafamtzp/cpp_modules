@@ -14,6 +14,7 @@ class Contact
 		~Contact(void);
 		bool has_data(void) const;
 		void clear(void);
-		bool	setField(std::string field, std::string input);
+		int	setField(std::string field, std::string input);
+		int	setNumber(std::string input);
 		std::string	getField(std::string field);
 };

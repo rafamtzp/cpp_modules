@@ -18,7 +18,7 @@ PhoneBook::~PhoneBook(void)
 
 void PhoneBook::add_contact(void)
 {
-	bool is_valid = true;
+	int is_valid = 1;
 	std::string input;
 	std::string fields[5] {
 		"firstname",
@@ -28,16 +28,22 @@ void PhoneBook::add_contact(void)
 		"secret"
 	};
 
-	for (int i = 0; i < 5 && is_valid; i++)
+	for (int i = 0; i < 5 && is_valid == 1; i++)
 	{
 		std::cout << "Please enter their "<<fields[i]<<": ";
 		getline(std::cin, input);
-		is_valid = contacts[index].setField(fields[i], input);
+		if (fields[i] != "number")
+			is_valid = contacts[index].setField(fields[i], input);
+		else
+			is_valid = contacts[index].setNumber(input);
+		std::cout << is_valid<<std::endl;
 	}
-	if (is_valid)
+	if (is_valid == 1)
 		this->index++;
-	else
+	else if (is_valid == 0)
 		std::cout << "(!!)Invalid entry (non-ascii or empty).\nPlease try again"<<std::endl;
+	else if (is_valid == -1)
+		std::cout << "(!!) Invalid number (only digits, spaces, + and -)"<<std::endl;
 	if (this->index == 8)
 		this->index = 0;
 }
