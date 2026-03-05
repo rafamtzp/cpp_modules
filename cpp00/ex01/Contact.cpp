@@ -41,21 +41,21 @@ Contact::~Contact(void)
 	return ;
 }
 
-bool	Contact::setField(std::string field, std::string input)
+int	Contact::setField(std::string field, std::string input)
 {
-	bool is_valid = false;
+	bool is_valid = 0;
 
 	for (int i = 0; i < input.length() && !is_valid; i++) //check nonempty
 	{
 		if (isascii(input[i]) && !isspace(input[i]))
-			is_valid = true;
+			is_valid = 1;
 	}
 	for (int i = 0; i < input.length() && is_valid; i++) // check all ascii
 	{
 		if (!isascii(input[i]))
-			is_valid = false;
+			is_valid = 0;
 	}
-	if (is_valid == true)
+	if (is_valid == 1)
 	{
 		if (field == "firstname")
 			firstname = input;
@@ -63,11 +63,29 @@ bool	Contact::setField(std::string field, std::string input)
 			lastname = input;
 		else if (field == "nickname")
 			nickname = input;
-		else if (field == "number")
-			number = input;
 		else if (field == "secret")
 			secret = input;
 	}
+	return (is_valid);
+}
+
+int	Contact::setNumber(std::string input)
+{
+	int is_valid = -1;
+
+	for (int i = 0; i < input.length() && is_valid == -1; i++) //check nonempty
+	{
+		if (isascii(input[i]) && !isspace(input[i]))
+			is_valid = 1;
+	}
+	for (int i = 0; i < input.length() && is_valid == 1; i++) // check all ascii
+	{
+		if (!isdigit(input[i]) && input[i] != '+' 
+		&& !isspace(input[i]) && input[i] != '-')
+			is_valid = -1;
+	}
+	if (is_valid == 1)
+		number = input;
 	return (is_valid);
 }
 
