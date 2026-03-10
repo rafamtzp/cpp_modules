@@ -46,6 +46,7 @@ Fixed::Fixed( const int n ) : _value(n * pow(2, 8))
 
 Fixed::Fixed( const float f ) : _value((int)roundf(f * (1 << _width)))
 {
+	std::cout << "Raw value from float: "<<_value<<std::endl;
 	std::cout << "Float constructor called" << std::endl;
 }
 

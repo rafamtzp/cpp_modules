@@ -1,11 +1,11 @@
 #include "Point.hpp"
 
-static bool onSameSide( Point const l1, Point l2, 
+static bool onSameSide( Point const p1, Point p2, 
 					   Point opp, Point point)
 {
-	Point line(l2 - l1);
-	Point lp(point - l1);
-	Point lo(opp - l1);
+	Point line(p2 - p1);
+	Point lp(point - p1);
+	Point lo(opp - p1);
 
 	Fixed crossp = line.getx() * lp.gety() - line.gety() * lp.getx();
 	Fixed crosso = line.getx() * lo.gety() - line.gety() * lo.getx();

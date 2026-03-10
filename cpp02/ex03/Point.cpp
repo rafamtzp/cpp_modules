@@ -14,3 +14,9 @@ Point   Point::operator-( const Point& other )
     Point tmp(this->x - other.getx(), this->y - other.gety());
     return (tmp);
 }
+
+Point&  Point::operator=( const Point& other )
+{
+	(void) other;
+	return (*this);
+}
