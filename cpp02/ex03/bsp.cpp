@@ -4,13 +4,15 @@ static bool onSameSide( Point const p1, Point p2,
 					   Point opp, Point point)
 {
 	Point line(p2 - p1);
-	Point lp(point - p1);
+	Point lp(point - p1); 
 	Point lo(opp - p1);
 
 	Fixed crossp = line.getx() * lp.gety() - line.gety() * lp.getx();
+	if (crossp == 0)
+		return (false);
 	Fixed crosso = line.getx() * lo.gety() - line.gety() * lo.getx();
 
-	if ((crossp < 0 && crosso < 0) || (crossp >= 0 && crosso >= 0))
+	if ((crossp < 0 && crosso < 0) || (crossp > 0 && crosso > 0))
 		return (true);
 	return (false);
 }
