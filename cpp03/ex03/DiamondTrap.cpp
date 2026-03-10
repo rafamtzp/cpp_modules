@@ -2,12 +2,14 @@
 
 DiamondTrap::DiamondTrap(void) : ClapTrap("_clap_name"), ScavTrap(), FragTrap()
 {
+	this->ClapTrap::energy = 50;
 	std::cout << "DiamondTrap created" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) :
 ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), name(name)
 {
+
 	std::cout << "DiamondTrap "<<name<<" created" << std::endl;
 }
 
