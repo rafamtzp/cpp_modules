@@ -2,19 +2,26 @@
 
 ScavTrap::ScavTrap( void )
 {
-	hp = 100;
-	energy = 50;
-	atkDmg = 20;
 	std::cout << "ScavTrap created" << std::endl;
 }
 ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
-	hp = 100;
-	energy = 50;
-	atkDmg = 20;
 	std::cout <<
-	"ScavTrap" << name << " was created"<<std::endl;
+	"ScavTrap " << name << " was created"<<std::endl;
 }
+
+ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
+{
+	if (this != &other)
+		ClapTrap::operator=(other);
+	return (*this);
+}
+
+ScavTrap::ScavTrap( const ScavTrap& other ) : ClapTrap(other)
+{
+	std::cout << "ScavTrap copy created"<<std::endl;
+}
+
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << "ScavTrap " << name << " destroyed" << std::endl;
