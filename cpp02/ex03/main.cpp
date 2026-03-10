@@ -22,5 +22,7 @@ int main( void ) {
 	};
 	for (int i = 0; i < 6; i++)
 		std::cout << std::boolalpha << bsp(a, b, c, arr[i]) <<std::endl;
+
+	//std::cout << "WEIRD TEST :"<<bsp(Point(0, 0), Point(2, 1), Point(0, 0), Point(1, 0.5))<<std::endl;
 }
 
