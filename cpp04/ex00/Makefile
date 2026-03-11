@@ -1,9 +1,9 @@
 NAME = main
 
-CC = g++
+CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp Dog.cpp Cat.cpp Animal.cpp
+SRC = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongCat.cpp WrongAnimal.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)

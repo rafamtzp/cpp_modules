@@ -16,11 +16,11 @@ int main()
 	pets[0]->makeSound();
 	pets[1]->makeSound();
 
-	//Cat *twin_catto = new Cat((const Cat&)*pets[1]);
+	Cat *twin_catto = new Cat((const Cat&)*pets[1]);
 
 	delete pets[0];
 	delete pets[1];
-	//delete twin_catto;
+	delete twin_catto;
 
 	return 0;
 }

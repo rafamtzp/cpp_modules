@@ -14,20 +14,21 @@ void	last_test();
 
 int main()
 {
+	// AMateria *ice = new Ice();
+	// delete ice;
 	almost_basic_test();
-	std::cout << std::string(45, '-')<<std::endl;
-	inventory_overflow();
-	std::cout << std::string(45, '-')<<std::endl;
-	deep_copies();
-	std::cout << std::string(45, '-')<<std::endl;
-	assignment_operator();
-	std::cout << std::string(45, '-')<<std::endl;
-	invalid_index();
-	std::cout << std::string(45, '-')<<std::endl;
-	unknown_materia();
-	std::cout << std::string(45, '-')<<std::endl;
-	last_test();
-
+	// std::cout << std::string(45, '-')<<std::endl;
+	// inventory_overflow();
+	// std::cout << std::string(45, '-')<<std::endl;
+	// deep_copies();
+	// std::cout << std::string(45, '-')<<std::endl;
+	// assignment_operator();
+	// std::cout << std::string(45, '-')<<std::endl;
+	// invalid_index();
+	// std::cout << std::string(45, '-')<<std::endl;
+	// unknown_materia();
+	// std::cout << std::string(45, '-')<<std::endl;
+	// last_test();
 }
 
 void almost_basic_test()
