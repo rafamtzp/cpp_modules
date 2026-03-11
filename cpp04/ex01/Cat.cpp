@@ -3,7 +3,7 @@
 Cat::Cat(void)
 {
 	std::cout << "Cat created"<<std::endl;
-	type = "cat";
+	type = "Cat";
 	brain = new Brain;
 }
 

@@ -10,8 +10,8 @@
 			MateriaSource(const MateriaSource& other);
 			~MateriaSource(void);
 			MateriaSource& operator=(const MateriaSource& other);
-			void learnMateria(AMateria* materia);
-			AMateria* createMateria(std::string const & type);
+			void learnMateria(AMateria* materia) override;
+			AMateria* createMateria(std::string const & type) override;
 	};
 #endif
 

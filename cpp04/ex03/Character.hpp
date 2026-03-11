@@ -7,8 +7,8 @@
 	{
 		private:
 			std::string name;
-		public:
 			AMateria **inventory;
+		public:
 			Character(void);
 			Character(const Character& other);
 			Character(const std::string name);

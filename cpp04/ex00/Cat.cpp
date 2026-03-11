@@ -2,7 +2,7 @@
 
 Cat::Cat(void)
 {
-	type = "cat";
+	type = "Cat";
 	std::cout << "Cat created"<<std::endl;
 }
 

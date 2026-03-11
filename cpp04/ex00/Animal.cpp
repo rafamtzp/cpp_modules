@@ -27,4 +27,7 @@ std::string	Animal::getType(void) const
 	return (type);
 }
 
-void	Animal::makeSound(void) const {}
+void	Animal::makeSound(void) const
+{
+	std::cout << "* Unidentified animal noises *"<<std::endl;
+}
