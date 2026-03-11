@@ -1,11 +1,28 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap( void ) : name("name"), hp(10), energy(10), atkDmg(0)
+ClapTrap::ClapTrap( void ) : name("name")
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap( std::string name ) : name(name), energy(10), atkDmg(0), hp(10)
+ClapTrap&	ClapTrap::operator=( const ClapTrap& other )
+{
+	if (this != &other)
+	{
+		name = other.name;
+		hp = other.hp;
+		atkDmg = other.atkDmg;
+		energy = other.energy;
+	}
+	return (*this);
+}
+
+ClapTrap::ClapTrap( const ClapTrap& other ) : name(other.name), hp(other.hp), atkDmg(other.atkDmg), energy(other.energy)
+{
+	std::cout << "Copy constructor called"<<std::endl;
+}
+
+ClapTrap::ClapTrap( std::string name ) : name(name)
 {
 	std::cout << "Parameterized constructor called" << std::endl;
 }
@@ -44,4 +61,9 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		"ClapTrap " << name << " has replenished " << amount << " hp points."
 		<< std::endl;
 	}
+}
+
+void	ClapTrap::getValues(void)
+{
+	std::cout<<"Values: "<<hp<<" "<<energy<<" "<<atkDmg<<std::endl;
 }

@@ -5,4 +5,5 @@ int main(void)
 	FragTrap f("Fred");
 
 	f.highFivesGuys();
+	f.getValues();
 }

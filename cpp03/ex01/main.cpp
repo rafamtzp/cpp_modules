@@ -8,4 +8,5 @@ int main(void)
 	s.attack("bill");
 	s.takeDamage(5);
 	s.beRepaired(2);
+	s.getValues();
 }

@@ -1,23 +1,26 @@
-#ifndef CLAP_TRAP_HPP
-#define CLAP_TRAP_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 	#include <iostream>
 
 	class ClapTrap
 	{
 		protected:
 			std::string name;
-			int hp;
-			int energy;
-			int atkDmg;
+			int hp = 10;
+			int energy = 10;
+			int atkDmg = 0;
+			
+		public:
 			ClapTrap&	operator=( const ClapTrap& other );
 			ClapTrap( const ClapTrap& other );
-		
-		public:
 			ClapTrap( void );
 			ClapTrap( std::string name );
-			virtual ~ClapTrap( void );
+			~ClapTrap( void );
 			virtual void	attack(const std::string& target);
 			void	takeDamage(unsigned int amount);
 			void	beRepaired(unsigned int amount);
+
+			// for tests
+			void getValues(void);
 	};
 #endif
