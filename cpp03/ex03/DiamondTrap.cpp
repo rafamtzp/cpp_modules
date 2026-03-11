@@ -2,15 +2,35 @@
 
 DiamondTrap::DiamondTrap(void) : ClapTrap("_clap_name"), ScavTrap(), FragTrap()
 {
-	this->ClapTrap::energy = 50;
+	energy = 50;
 	std::cout << "DiamondTrap created" << std::endl;
+	std::cout << "Values: "<<hp<<" "<<energy<<" "<<atkDmg<<std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) :
 ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), name(name)
 {
-
+	energy = 50;
 	std::cout << "DiamondTrap "<<name<<" created" << std::endl;
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap& other)
+{
+	hp = other.hp;
+	energy = other.energy;
+	atkDmg = other.atkDmg;
+	std::cout<<"DiamondTrap copy created"<<std::endl;
+}
+
+DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& other)
+{
+	if (this != &other)
+	{
+		hp = other.hp;
+		energy = other.energy;
+		atkDmg = other.atkDmg;
+	}
+	return (*this);
 }
 
 DiamondTrap::~DiamondTrap(void)

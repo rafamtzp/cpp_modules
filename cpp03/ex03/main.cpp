@@ -2,10 +2,11 @@
 
 int main(void)
 {
-	DiamondTrap d("minecraft diamond");
+	DiamondTrap d("Trappy");
 
-	d.attack("Herobrine");
 	d.whoAmI();
-	
-
+	d.attack("enemy");
+	d.getValues();
+	d.guardGate();
+	d.highFivesGuys();
 }

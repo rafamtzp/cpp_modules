@@ -4,7 +4,6 @@
 
 	class FragTrap : public ClapTrap
 	{
-		private:
 		public:
 			FragTrap( const FragTrap& other );
 			FragTrap& operator=( const FragTrap& other );

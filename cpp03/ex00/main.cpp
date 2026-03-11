@@ -7,4 +7,5 @@ int main(void)
 	t.attack("enemy1");
 	t.beRepaired(10);
 	t.takeDamage(10);
+	t.getValues();
 }

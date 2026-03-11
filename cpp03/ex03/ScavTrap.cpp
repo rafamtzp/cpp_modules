@@ -2,12 +2,17 @@
 
 ScavTrap::ScavTrap( void )
 {
+	hp = 100;
+	energy = 50;
+	atkDmg = 20;
 	std::cout << "ScavTrap created" << std::endl;
 }
 ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
-	std::cout <<
-	"ScavTrap " << name << " was created"<<std::endl;
+	hp = 100;
+	energy = 50;
+	atkDmg = 20;
+	std::cout << "ScavTrap " << name << " was created"<<std::endl;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
@@ -19,6 +24,9 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
 
 ScavTrap::ScavTrap( const ScavTrap& other ) : ClapTrap(other)
 {
+	hp = 100;
+	energy = 50;
+	atkDmg = 20;
 	std::cout << "ScavTrap copy created"<<std::endl;
 }
 

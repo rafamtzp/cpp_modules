@@ -6,20 +6,21 @@
 	{
 		protected:
 			std::string name;
-			int hp = 100;
-			int energy = 100;
-			int atkDmg = 30;
+			int hp = 10;
+			int energy = 10;
+			int atkDmg = 0;
 			
 		public:
 			ClapTrap&	operator=( const ClapTrap& other );
 			ClapTrap( const ClapTrap& other );
 			ClapTrap( void );
 			ClapTrap( std::string name );
-			virtual ~ClapTrap( void );
+			~ClapTrap( void );
 			virtual void	attack(const std::string& target);
 			void	takeDamage(unsigned int amount);
 			void	beRepaired(unsigned int amount);
+
+			// for tests
+			void getValues(void);
 	};
 #endif
-
-

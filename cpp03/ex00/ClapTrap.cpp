@@ -62,3 +62,8 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		<< std::endl;
 	}
 }
+
+void	ClapTrap::getValues(void)
+{
+	std::cout<<"Values: "<<hp<<" "<<energy<<" "<<atkDmg<<std::endl;
+}
