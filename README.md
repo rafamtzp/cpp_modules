@@ -61,17 +61,17 @@ Run the compiled programs:
 
 **ex00** contains a program that turns your message to uppercase.  It was about learning to write to stdout using **C++ redirections**.
 
-* input: ```./megaphone "your message"```
+* Usage: ```./megaphone "your message"```
 * output: YOUR MESSAGE
 
 **ex01** taught me how to create my first classes with attributes and methods to create an interactive phonebook interface where one can add and search for contacts in a table.  It also taught me about C++ error handling (**try-catch**) and using the **iomanip library** to display a table properly.
 
-* input: ```./phonebook```
+* Usage: ```./phonebook```
 * output: \* An interactive phonebook program where you can add and search for contacts in a table. \*
 
 **ex02 (bonus)** was about recreating the file Account.cpp in order to restore functionality to the class found in Account.hpp so that it prints the messages exactly as in 19920104_091532.log (time stamps shouldn't match).  This gave me a deeper understanding of implementing class methods and introduced me to **static methods and attributes**. 
 
-* input: ```./test```
+* Usage: ```./test```
 * ouput: \* printed logs \*
 ---
 
@@ -92,15 +92,15 @@ Focus on memory management and references in C++.
 
 **ex02 and ex03** serve to illustrate the difference between an object, a **reference** to an object, and a pointer to an object.  Ex02 is an introduction to see how they work and ex03 puts them into practice inside of two classes HumanA and HumanB.  HumanA always holds a weapon and HumanB does not.  Therefore, HumanA has a reference to a weapon as an attribute and HumanB has a pointer.  This is because **references must be initialized** and **what they reference cannot be changed**, whereas what a pointer points to can be changed.
 
-**ex00-ex03 Usage:** ```./main```
+* ex00-ex03 Usage: ```./main```
 
 **ex04** was about working with **input and output file streams** in C++ and **std::string methods** to create a program that creates a copy of a file but with every instance of a string replaced by another string.
 
-**Usage:** ```./main [filename] [string to find] [string to replace]```
+* Usage: ```./main [filename] [string to find] [string to replace]```
 
 **ex05** was about creating a method for the Harl class that uses **pointers to** its other **methods**.  This method accepts a string called "level". e.g. if level = "DEBUG" then Harl::debug() prints a debug message.  If level = "INFO" then Harl::info() prints an info message. etc.
 
-**Usage:** ```./main```
+* Usage: ```./main```
 
 **ex06 (bonus)** was about learning to use **switch statements** in C++. The program takes one of the levels as a parameter and it displays all messages from this level and above.
 
@@ -108,7 +108,7 @@ levels: "DEBUG" < "INFO" < "WARNING" < "ERROR"
 
 e.g. doing ./harlFilter DEBUG will print all the messages, ./harlFilter WARNING will only print the warning and error messages, etc.
 
-**Usage:** ```./harlFilter [LEVEL]```
+* Usage: ```./harlFilter [LEVEL]```
 
 ---
 
@@ -125,7 +125,7 @@ Introduction to operator overloading and canonical class form.
 
 ### ▶️ Usage and explanation
 
-**Usage (for all):** ```./main```
+* Usage (for all): ```./main```
 
 **ex00-ex02** are about slowly constructing a class in **Orthodox Canonical Form** for fixed-point numbers.  You start with the essential **constructors and destructors** and the **assignment operator overload** and then progressively add different constructors, methods, and **operator overloads** to make the class functional.
 
@@ -151,7 +151,8 @@ Exploration of inheritance and class relationships.
 In **ex03 (bonus)** you are tasked to create the DiamondTrap class that inherits from both FragTrap and ScavTrap so ScavTrap and FragTrap now need to **virually inherit** ClapTrap to avoid compiler errors.
 
 To see these classes in action:
-**Usage (for all):** ```./main```
+
+* Usage (for all): ```./main```
 
 ---
 
@@ -177,7 +178,8 @@ Advanced object-oriented programming concepts.
 **ex03 (bonus)** was about applying all these concepts to create a program with more complicated class interactions between videogame-style characters.  It involves working with **interfaces**, creating **deep copies** of heap-allocated attributes, managing memory, and using inheritance.
 
 To see these classes in action:
-**Usage (for all):** ```./main```
+
+* Usage (for all): ```./main```
 
 ---
 
