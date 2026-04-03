@@ -22,11 +22,11 @@ Each module contains its own exercises, typically structured with a `Makefile`.
 To compile an exercise:
 
 ```bash
-cd cpp_module_00/ex00
+cd cpp00/ex00
 make
 ```
 
-*(Adjust directory names based on your structure.)*
+*(Adjust directory and exercise names based on what you want to compile)*
 
 ---
 
@@ -58,20 +58,18 @@ Introduction to C++ syntax and basic concepts.
 ### ▶️ Usage
 
 Run the compiled programs:
-##### ex00:
-This program turns your message to uppercase.  It was about learning to write to stdout using **C++ redirections**.
+
+**ex00** contains a program that turns your message to uppercase.  It was about learning to write to stdout using **C++ redirections**.
 
 * input: ```./megaphone "your message"```
 * output: YOUR MESSAGE
 
-##### ex01:
-This program taught me how to create my first classes with attributes and methods to create an interactive phonebook interface where one can add and search for contacts in a table.  It also taught me about C++ error handling (**try-catch**) and using the **iomanip library** to display a table properly.
+**ex01** taught me how to create my first classes with attributes and methods to create an interactive phonebook interface where one can add and search for contacts in a table.  It also taught me about C++ error handling (**try-catch**) and using the **iomanip library** to display a table properly.
 
 * input: ```./phonebook```
 * output: \* An interactive phonebook program where you can add and search for contacts in a table. \*
 
-##### ex02 (bonus):
-This program was about recreating the file Account.cpp in order to restore functionality to the class found in Account.hpp so that it prints the messages exactly as in 19920104_091532.log (time stamps shouldn't match).  This gave me a deeper understanding of implementing class methods and introduced me to **static methods and attributes**. 
+**ex02 (bonus)** was about recreating the file Account.cpp in order to restore functionality to the class found in Account.hpp so that it prints the messages exactly as in 19920104_091532.log (time stamps shouldn't match).  This gave me a deeper understanding of implementing class methods and introduced me to **static methods and attributes**. 
 
 * input: ```./test```
 * ouput: \* printed logs \*
@@ -90,26 +88,21 @@ Focus on memory management and references in C++.
 
 ### ▶️ Usage and explanation
 
-##### ex00 and ex01:
-These exercises are about learning to use **new** and **delete** to heap-allocate a Zombie object (in newZombie.cpp) and an array of Zombies (zombieHorde.cpp), and how this is different from stack-allocating a Zombie (in randomChump.cpp).
+**ex00 and ex01** are about learning to use **new** and **delete** to heap-allocate a Zombie object (in newZombie.cpp) and an array of Zombies (zombieHorde.cpp), and how this is different from stack-allocating a Zombie (in randomChump.cpp).
 
-##### ex02, ex03:
-These exercises serve to illustrate the difference between an object, a **reference** to an object, and a pointer to an object.  Ex02 is an introduction to see how they work and ex03 puts them into practice inside of two classes HumanA and HumanB.  HumanA always holds a weapon and HumanB does not.  Therefore, HumanA has a reference to a weapon as an attribute and HumanB has a pointer.  This is because **references must be initialized** and **what they reference cannot be changed**, whereas what a pointer points to can be changed.
+**ex02 and ex03** serve to illustrate the difference between an object, a **reference** to an object, and a pointer to an object.  Ex02 is an introduction to see how they work and ex03 puts them into practice inside of two classes HumanA and HumanB.  HumanA always holds a weapon and HumanB does not.  Therefore, HumanA has a reference to a weapon as an attribute and HumanB has a pointer.  This is because **references must be initialized** and **what they reference cannot be changed**, whereas what a pointer points to can be changed.
 
 **ex00-ex03 Usage:** ```./main```
 
-##### ex04:
-This exercise was about working with **input and output file streams** in C++ and **std::string methods** to create a program that creates a copy of a file but with every instance of a string replaced by another string.
+**ex04** was about working with **input and output file streams** in C++ and **std::string methods** to create a program that creates a copy of a file but with every instance of a string replaced by another string.
 
 **Usage:** ```./main [filename] [string to find] [string to replace]```
 
-##### ex05:
-This exercise was about creating a method for the Harl class that uses **pointers to** its other **methods**.  This method accepts a string called "level". e.g. if level = "DEBUG" then Harl::debug() prints a debug message.  If level = "INFO" then Harl::info() prints an info message. etc.
+**ex05** was about creating a method for the Harl class that uses **pointers to** its other **methods**.  This method accepts a string called "level". e.g. if level = "DEBUG" then Harl::debug() prints a debug message.  If level = "INFO" then Harl::info() prints an info message. etc.
 
 **Usage:** ```./main```
 
-##### ex06 (bonus):
-This exercise was about learning to use **switch statements** in C++. The program takes one of the levels as a parameter and it displays all messages from this level and above.
+**ex06 (bonus)** was about learning to use **switch statements** in C++. The program takes one of the levels as a parameter and it displays all messages from this level and above.
 
 levels: "DEBUG" < "INFO" < "WARNING" < "ERROR"
 
