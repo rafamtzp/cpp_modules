@@ -13,12 +13,12 @@ Fixed::Fixed() : _value(0)
 
 Fixed::Fixed(const Fixed& other) : _value(other._value)
 {
-	//std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::Fixed( const int n ) : _value(n * pow(2, 8))
 {
-	//std::cout << "Int constructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed( const float f ) : _value((int)roundf(f * (1 << _width)))
@@ -28,7 +28,7 @@ Fixed::Fixed( const float f ) : _value((int)roundf(f * (1 << _width)))
 
 Fixed::~Fixed()
 {
-	//std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 // ---------------- Member functions ---------------------------------

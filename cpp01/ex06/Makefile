@@ -1,6 +1,6 @@
 NAME = harlFilter
 
-CC = g++
+CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp Harl.cpp
@@ -8,8 +8,12 @@ OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
+
 $(NAME) : $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o : %.cpp
+	$(CC) -c $(CFLAGS) $< -o $@
 
 clean :
 	rm -f $(NAME)
