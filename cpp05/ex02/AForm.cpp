@@ -2,11 +2,11 @@
 #include "Bureaucrat.hpp"
 
 // Orthodox canonical form
-Form::Form():
+AForm::AForm():
 name(""), isSigned(false), 
 gradeToSign(1), gradeToExecute(1){}
 
-Form::Form(const std::string& name, int gradeToSign, int gradeToExecute):
+AForm::AForm(const std::string& name, int gradeToSign, int gradeToExecute):
 name(name), isSigned(false), 
 gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
@@ -16,22 +16,22 @@ gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 		throw GradeTooLowException();
 }
 
-Form::Form(const Form& other):
+AForm::AForm(const AForm& other):
 name(other.name), isSigned(other.isSigned), 
 gradeToSign(other.gradeToSign), gradeToExecute(other.gradeToExecute){}
 
 // exception classes
-const char	*Form::GradeTooHighException::what() const throw()
+const char	*AForm::GradeTooHighException::what() const throw()
 {
 	return ("Error. This grade is too high!");
 }
 
-const char *Form::GradeTooLowException::what() const throw()
+const char *AForm::GradeTooLowException::what() const throw()
 {
 	return ("Error. This grade is too low!");
 }
 
-Form& Form::operator=(const Form& other)
+AForm& AForm::operator=(const AForm& other)
 {
 	if (this != &other)
 	{
@@ -40,30 +40,37 @@ Form& Form::operator=(const Form& other)
 	return (*this);
 }
 
-Form::~Form(){};
+AForm::~AForm(){};
 
 // Getters
-const std::string& Form::getName() const {return (name);}
+const std::string& AForm::getName() const {return (name);}
 
-bool               Form::getIsSigned() const {return (isSigned);}
+bool               AForm::getIsSigned() const {return (isSigned);}
 
-int                Form::getGradeToSign() const {return (gradeToSign);}
+int                AForm::getGradeToSign() const {return (gradeToSign);}
 
-int                Form::getGradeToExecute() const {return (gradeToExecute);}
+int                AForm::getGradeToExecute() const {return (gradeToExecute);}
 
-std::ostream&	operator<<(std::ostream& os, const Form& obj)
+std::ostream&	operator<<(std::ostream& os, const AForm& obj)
 {
-	os << "Form: " << obj.getName()
+	os << "AForm: " << obj.getName()
 	<< ", isSigned: " << std::boolalpha << obj.getIsSigned()
 	<< ", gradeToSign: " << obj.getGradeToSign()
 	<< ", gradeToExecute: " << obj.getGradeToExecute();
 	return (os);
 }
 
-void	Form::beSigned(Bureaucrat&	b)
+void	AForm::beSigned(Bureaucrat&	b)
 {
 	if (b.getGrade() <= gradeToSign)
 		isSigned = true;
 	else
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
+}
+
+bool	AForm::canBeExecuted(const Bureaucrat& b) const
+{
+	if (b.getGrade() <= gradeToExecute && isSigned == true)
+		return (true);
+	return (false);
 }
