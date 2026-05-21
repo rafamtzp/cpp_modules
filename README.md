@@ -183,6 +183,24 @@ To see these classes in action:
 
 ---
 
+### 🧩 Module 05 — Exceptions
+
+Try-catch and exceptions
+
+#### Concepts:
+
+* Defining std::exception classes
+* Using try-catch
+* Recap of abstract classes and inheritance
+
+
+### ▶️ Usage and explanation
+
+These exercises involved creating and updating a Bureaucrat class that can sign and execute forms if the bureaucrat's grade is high enough.  Otherwise appropriate user-defined exceptions would have to be thrown and handled.  The main.cpp's in here show this and other classes in action.
+
+* Usage (for all): ```./main```
+
+
 ## 🧠 Concepts Learned
 
 Across these modules, the following key C++ concepts were developed:
@@ -194,6 +212,7 @@ Across these modules, the following key C++ concepts were developed:
 * Operator overloading
 * Inheritance and polymorphism
 * Virtual functions
+* try-catch and exception classes
 
 ---
 
