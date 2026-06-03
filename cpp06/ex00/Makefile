@@ -3,7 +3,7 @@ NAME = main
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = 
+SRC = ScalarConverter.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
