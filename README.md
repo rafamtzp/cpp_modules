@@ -200,6 +200,28 @@ These exercises involved creating and updating a Bureaucrat class that can sign 
 
 * Usage (for all): ```./main```
 
+---
+
+### 🧩 Module 06 — C++ casts
+
+#### Concepts:
+
+* Using static_cast to make ordinary conversions
+* Using reinterpret_cast
+* Using and protecting dynamic_cast for pointers and references
+
+### ▶️ Usage and explanation
+
+For ex00 we had to write a program that uses static casts to convert and print a literal passed as an argument as a char, int, float, and double.
+
+Ex01 was a simple exercise where you had to create a function that reinterpreted a memory address as a uintptr_t and it's inverse which reinterpreted that as a memory address again using reinterpret_cast.
+
+Ex02 involved creating functions that use protected dynamic casts to determine which type of inherited class (A, B, or C) a Base class ptr is pointing to and a Base class reference is referencing.
+
+* Usage (ex00): ```./convert [argument]```
+* Usage (ex01-ex02): ```./main```
+
+
 
 ## 🧠 Concepts Learned
 
@@ -213,6 +235,7 @@ Across these modules, the following key C++ concepts were developed:
 * Inheritance and polymorphism
 * Virtual functions
 * try-catch and exception classes
+* C++ casts
 
 ---
 

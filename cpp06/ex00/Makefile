@@ -1,9 +1,9 @@
-NAME = main
+NAME = convert
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = ScalarConverter.cpp
+SRC = ScalarConverter.cpp main.cpp printing_funcs.cpp whichType.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

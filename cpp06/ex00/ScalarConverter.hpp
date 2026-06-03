@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <limits>
 
 enum e_type
 {
@@ -21,7 +22,12 @@ class ScalarConverter
 	ScalarConverter& operator=(const ScalarConverter& other);
 
 	public:
-	
 	static void convert(const std::string& literal);
 };
 
+void	printSpecial(const std::string& literal);
+void	printChar(const std::string& literal, int len);
+void	printInt(const std::string& literal);
+void	printFloat(const std::string& literal, int len);
+void	printDouble(const std::string& literal);
+e_type	whichType(const std::string& literal, int len);
