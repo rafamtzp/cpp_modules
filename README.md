@@ -221,7 +221,21 @@ Ex02 involved creating functions that use protected dynamic casts to determine w
 * Usage (ex00): ```./convert [argument]```
 * Usage (ex01-ex02): ```./main```
 
+---
 
+### 🧩 Module 07 — C++ Templates
+
+#### Concepts:
+
+* Function templates with one or multiple typenames
+* Class and method templates
+
+
+### ▶️ Usage and explanation
+
+The first two exercise involved designing function templates with one and more typenames, whereas the last one involved designing a template for an Array class in Orthodox Canonical Form.
+
+* Usage (for all): ```./main```
 
 ## 🧠 Concepts Learned
 
