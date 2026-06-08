@@ -6,7 +6,8 @@
 
 class Bureaucrat;
 
-class Form{
+class Form
+{
 	private:
 	const std::string name;
 	bool              isSigned;
@@ -40,7 +41,6 @@ class Form{
 
 	// More methods
 	void	beSigned(Bureaucrat& b);
-	
 };
 
 std::ostream& operator<<(std::ostream& os, const Form& obj);
