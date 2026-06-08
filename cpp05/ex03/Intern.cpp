@@ -13,27 +13,27 @@ AForm*  Intern::createPPF(std::string target){ return new PresidentialPardonForm
 
 AForm*  Intern::makeForm(std::string name, std::string target)
 {
-    std::string formTypes[3] = {
-        "shrubbery creation",
-        "robotomy request",
-        "presidential pardon"
-    };
+	std::string formTypes[3] = {
+		"shrubbery creation",
+		"robotomy request",
+		"presidential pardon"
+	};
 
-    AForm* (Intern::*helpers[3])(std::string) = {
-        &Intern::createSCF,
-        &Intern::createRRF,
-        &Intern::createPPF
-    };
+	AForm* (Intern::*helpers[3])(std::string) = {
+		&Intern::createSCF,
+		&Intern::createRRF,
+		&Intern::createPPF
+	};
 
-    for (int i = 0; i < 3; i++)
-    {
-        if (name == formTypes[i])
-        {
-            std::cout << "Intern creates " << name << std::endl;
-            return (this->*helpers[i])(target);
-        }
-    }
-    std::cout << "Error: Form name does not exist." << std::endl;
-    return (NULL);
+	for (int i = 0; i < 3; i++)
+	{
+		if (name == formTypes[i])
+		{
+			std::cout << "Intern creates " << name << std::endl;
+			return (this->*helpers[i])(target);
+		}
+	}
+	std::cout << "Error: Form name does not exist." << std::endl;
+	return (NULL);
 }
 
