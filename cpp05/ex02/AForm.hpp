@@ -6,7 +6,8 @@
 
 class Bureaucrat;
 
-class AForm{
+class AForm
+{
 	private:
 	const std::string name;
 	bool              isSigned;
@@ -14,7 +15,7 @@ class AForm{
 	const int         gradeToExecute;
 
 	public:
-	// Orthodox Canonical AForm
+	// Orthodox Canonical Form
 	AForm();
 	AForm(const std::string& name, int gradeToSign, int gradeToExecute);
 	AForm(const AForm& other);
