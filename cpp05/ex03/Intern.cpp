@@ -6,6 +6,7 @@ Intern::Intern(const Intern& other){(void)other;}
 Intern::~Intern(){}
 Intern& Intern::operator=(const Intern& other){(void)other; return *this;}
 
+// helpers
 AForm*  Intern::createSCF(std::string target){return new ShrubberyCreationForm(target);}
 AForm*  Intern::createRRF(std::string target){ return new RobotomyRequestForm(target); }
 AForm*  Intern::createPPF(std::string target){ return new PresidentialPardonForm(target);}

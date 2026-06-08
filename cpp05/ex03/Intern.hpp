@@ -8,16 +8,17 @@
 
 class Intern 
 {
-public:
-    Intern();
-    Intern(const Intern& other);
-    Intern& operator=(const Intern& other);
-    ~Intern();
+	private:
+	// helpers
+	AForm   *createSCF(std::string target);
+	AForm   *createRRF(std::string target);
+	AForm   *createPPF(std::string target);
 
-    AForm   *makeForm(std::string name, std::string target);
+	public:
+	Intern();
+	Intern(const Intern& other);
+	Intern& operator=(const Intern& other);
+	~Intern();
 
-    // helpers
-    AForm   *createSCF(std::string target);
-    AForm   *createRRF(std::string target);
-    AForm   *createPPF(std::string target);
+	AForm   *makeForm(std::string name, std::string target);
 };
