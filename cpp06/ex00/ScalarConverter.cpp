@@ -2,10 +2,9 @@
 
 void	ScalarConverter::convert(const std::string& literal)
 {
-	// determine type
 	int	len = literal.length();
 	e_type type = whichType(literal, len);
-	// convert to numerical value
+
 	switch (type) {
 		case INVALID:
 			std::cout << "Invalid input." << std::endl;
@@ -26,6 +25,5 @@ void	ScalarConverter::convert(const std::string& literal)
 			printDouble(literal);
 			break;
 	};
-	// use static_cast to convert it to other types and display
 }
 

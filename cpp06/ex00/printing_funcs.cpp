@@ -90,7 +90,7 @@ void	printFloat(const std::string& literal, int len)
 		std::cout << "impossible" << std::endl;
 
 	//float and double:
-	if ((std::abs(value) > 1e6f || (std::abs(value) > 0 && std::abs(value) < 1e-4f)) 
+	if ((std::abs(value) > 1e6f || (value != 0 && std::abs(value) < 1e-4f)) 
 	|| (std::floor(value) != value))
 	{
 		std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
@@ -128,7 +128,7 @@ void	printDouble(const std::string& literal)
 		std::cout << "impossible" << std::endl;
 	
 	//float and double:
-	if ((std::abs(value) > 1e6f || (std::abs(value) > 0 && std::abs(value) < 1e-4f)) || (std::floor(value) != value))
+	if ((std::abs(value) > 1e6f || (value != 0 && std::abs(value) < 1e-4f)) || (std::floor(value) != value))
 	{
 		if (value <= __FLT_MAX__ && value >= -__FLT_MAX__)
 			std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;

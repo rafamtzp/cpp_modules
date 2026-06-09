@@ -3,7 +3,6 @@
 #include <cstdlib>
 #include "ScalarConverter.hpp"
 
-
 static bool	isSpecial(const std::string& literal)
 {
 	std::string specials[6] = {
