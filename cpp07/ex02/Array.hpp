@@ -7,7 +7,7 @@ class Array
 	unsigned int asize;
 	T	*arr;
 
-    public:
+	public:
 	Array();
 	Array(unsigned int n);
 	Array(const Array& other);

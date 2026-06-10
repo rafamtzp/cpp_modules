@@ -1,9 +1,9 @@
 #pragma once
 
 template <typename T, typename F>
-void    iter(T *addr, const int len, F f)
+void	iter(T *addr, const int len, F f)
 {
-    for (int i = 0; i < len; i++)
-        f(addr[i]);
-    return ;
+	for (int i = 0; i < len; i++)
+		f(addr[i]);
+	return ;
 }
