@@ -43,7 +43,8 @@ unsigned int	Span::shortestSpan()
 	std::sort(tmp.begin(), tmp.end());
 	
 	std::vector<int> diffs;
-	for (std::vector<int>::iterator it = tmp.begin(); it < (tmp.end() - 1); it++)
+	std::vector<int>::iterator it;
+	for (it = tmp.begin(); it < (tmp.end() - 1); it++)
 		diffs.push_back(*(it + 1) - *it);
 	
 	return (*std::min_element(diffs.begin(), diffs.end()));
