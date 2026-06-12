@@ -21,6 +21,10 @@ class	Span
 	unsigned int	shortestSpan();
 	unsigned int	longestSpan();
 
+	class SpanNotFoundException : public std::exception {
+		virtual const char *what() const throw();
+	};
+
 	class SpanFullException : public std::exception {
 		virtual const char *what() const throw();
 	};

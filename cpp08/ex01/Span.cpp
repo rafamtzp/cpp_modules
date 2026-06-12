@@ -21,6 +21,11 @@ const char *Span::SpanFullException::what() const throw()
 	return ("Span is full");
 }
 
+const char *Span::SpanNotFoundException::what() const throw()
+{
+	return ("Span could not be found");
+}
+
 void	Span::addNumber(int n)
 {
 	if (vec.size() + 1 > N)
@@ -38,6 +43,9 @@ void	Span::addNumber(std::vector<int>::iterator begin,
 
 unsigned int	Span::shortestSpan()
 {
+	if (vec.empty() || vec.size() == 1)
+		throw SpanNotFoundException();
+
 	std::vector<int> tmp = vec;
 
 	std::sort(tmp.begin(), tmp.end());
@@ -51,6 +59,9 @@ unsigned int	Span::shortestSpan()
 }
 unsigned int	Span::longestSpan()
 {
+	if (vec.empty() || vec.size() == 1)
+		throw SpanNotFoundException();
+
 	std::vector<int>::iterator min;
 	std::vector<int>::iterator max;
 	
