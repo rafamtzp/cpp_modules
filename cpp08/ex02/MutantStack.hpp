@@ -1,19 +1,19 @@
 #pragma once
 #include <stack>
 
-template <typename T>
-class MutantStack : public std::stack<T>
+template <typename T, typename C = std::deque<T> >
+class MutantStack : public std::stack<T, C>
 {
 	public:
 	MutantStack();
 	MutantStack(const MutantStack& other);
 	~MutantStack();
-	MutantStack<T>&	operator=(const MutantStack& other);
+	MutantStack<T,C>&	operator=(const MutantStack& other);
 	
-	typedef typename std::stack<T>::container_type::iterator iterator;
-	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
-	typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
-	typedef typename std::stack<T>::container_type::const_reverse_iterator const_reverse_iterator;
+	typedef typename std::stack<T,C>::container_type::iterator iterator;
+	typedef typename std::stack<T,C>::container_type::const_iterator const_iterator;
+	typedef typename std::stack<T,C>::container_type::reverse_iterator reverse_iterator;
+	typedef typename std::stack<T,C>::container_type::const_reverse_iterator const_reverse_iterator;
 
 	iterator	begin();
 	const_iterator	begin() const;

@@ -39,14 +39,14 @@ int main()
     MutantStack<int> mstack;
     mstack.push(5);
     mstack.push(17);
-    std::cout << mstack.top() << std::endl;
+    std::cout << "Top: " << mstack.top() << std::endl;
     mstack.pop();
-    std::cout << mstack.size() << std::endl;
+    std::cout << "Size: " << mstack.size() << std::endl;
     mstack.push(3);
     mstack.push(5);
     mstack.push(737);
-
     mstack.push(0);
+
     MutantStack<int>::iterator it = mstack.begin();
     MutantStack<int>::iterator ite = mstack.end();
     ++it;
@@ -56,7 +56,6 @@ int main()
         std::cout << *it << std::endl;
         ++it;
     }
-    std::stack<int> s(mstack);
 
     // TEST 2: Comparing with std::list behavior (as required by subject)
     std::cout << "--- Test 2: Standard List Comparison ---" << std::endl;
@@ -92,13 +91,12 @@ int main()
     }
     std::cout << std::endl;
 
-    // Test Random Access Capability (jumping around)
+    // Test jumping around
     MutantStack<int>::iterator jumpIt = mstack.begin();
     jumpIt += 3; 
-    std::cout << "Random Access jumpIt += 3 (should be 737): " << *jumpIt << std::endl;
+    std::cout << "jumpIt += 3 (should be 737): " << *jumpIt << std::endl;
     jumpIt -= 2;
-    std::cout << "Random Access jumpIt -= 2 (should be 3):   " << *jumpIt << "\n" << std::endl;
-
+    std::cout << "jumpIt -= 2 (should be 3):   " << *jumpIt << std::endl;
 
     // TEST 4: Const Correctness
     testConstStack(mstack);
@@ -106,26 +104,26 @@ int main()
 
     // TEST 5: Orthodox Canonical Form (Copy / Assignment check)
     std::cout << "--- Test 5: OCF / Stack Assignment Conversion ---" << std::endl;
-    std::stack<int> s(mstack); // Copying MutantStack into a standard std::stack
+    std::stack<int> s(mstack);
     std::cout << "Standard stack size from mutant copy: " << s.size() << std::endl;
     
     MutantStack<int> assignStack;
-    assignStack = mstack; // Testing assignment operator
-    std::cout << "Assigned mutant stack top: " << assignStack.top() << "\n" << std::endl;
+    assignStack = mstack;
+    std::cout << "Assigned mutant stack top: " << assignStack.top() << std::endl;
 
 
     // TEST 6: Non-default underlying container (std::vector)
     std::cout << "--- Test 6: Underlying Vector Container ---" << std::endl;
-    MutantStack<double, std::vector<double>> vecStack;
+    MutantStack<double, std::vector<double> > vecStack;
     vecStack.push(1.1);
     vecStack.push(2.2);
     vecStack.push(3.3);
     
-    std::cout << "Vector-backed stack content: ";
-    for (MutantStack<double, std::vector<double> >::iterator vit = vecStack.begin(); vit != vecStack.end(); ++vit) {
+    std::cout << "stack content with hidden vector: ";
+    MutantStack<double, std::vector<double> >::iterator vit;
+    for (vit = vecStack.begin(); vit != vecStack.end(); ++vit)
         std::cout << *vit << " ";
-    }
-    std::cout << "\n" << std::endl;
+    std::cout << std::endl;
 
 
     // TEST 7: Compatibility with STL Algorithms (std::sort)
