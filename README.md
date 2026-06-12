@@ -237,6 +237,23 @@ The first two exercise involved designing function templates with one and more t
 
 * Usage (for all): ```./main```
 
+---
+
+### 🧩 Module 08 — C++ Templated containers, iterators, algoritms
+
+#### Concepts:
+
+* Introduction to the C++ Standard Template Library
+* Templated containers (vectors, lists, stacks)
+* Iterators
+* Using algorithms from the STL (find, sort, min/max_element)
+
+### ▶️ Usage and explanation
+
+Ex00 was about using std::find to create a simpler wrapper for it; ex01 was about using vector methods and algorithms to create a Span class that contains a vector of maximum size with methods to calculate the longest and shortest distance between two elements stored inside it; and ex02 involved using stacks to create a derived MutantStack that includes iterators.
+
+* Usage (for all): ```./main```
+
 ## 🧠 Concepts Learned
 
 Across these modules, the following key C++ concepts were developed:
@@ -250,6 +267,7 @@ Across these modules, the following key C++ concepts were developed:
 * Virtual functions
 * try-catch and exception classes
 * C++ casts
+* C++ templates and STL
 
 ---
 
