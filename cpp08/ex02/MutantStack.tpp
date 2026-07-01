@@ -12,9 +12,9 @@ MutantStack<T, C>::~MutantStack() {}
 template <typename T, typename C>
 MutantStack<T, C> & MutantStack<T, C>::operator=(const MutantStack<T, C>& other)
 {
-    if (this != &other)
-        std::stack<T>::operator=(other);
-    return *this;
+	if (this != &other)
+		std::stack<T, C>::operator=(other);
+	return *this;
 }
 
 template <typename T, typename C>

@@ -16,13 +16,13 @@ class MutantStack : public std::stack<T, C>
 	typedef typename std::stack<T,C>::container_type::const_reverse_iterator const_reverse_iterator;
 
 	iterator	begin();
-	const_iterator	begin() const;
-	reverse_iterator rbegin();
-	const_reverse_iterator rbegin() const;
-
 	iterator	end();
-	const_iterator	end() const;
+	reverse_iterator	rbegin();
 	reverse_iterator	rend();
+
+	const_iterator	begin() const;
+	const_iterator	end() const;
+	const_reverse_iterator rbegin() const;
 	const_reverse_iterator	rend() const;
 };
 

@@ -57,6 +57,7 @@ unsigned int	Span::shortestSpan()
 	
 	return (*std::min_element(diffs.begin(), diffs.end()));
 }
+
 unsigned int	Span::longestSpan()
 {
 	if (vec.empty() || vec.size() == 1)
