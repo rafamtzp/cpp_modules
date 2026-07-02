@@ -6,7 +6,7 @@
 /*   By: ramarti2 <ramarti2@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 13:30:02 by ramarti2          #+#    #+#             */
-/*   Updated: 2026/07/02 16:36:30 by ramarti2         ###   ########.fr       */
+/*   Updated: 2026/07/02 17:14:37 by ramarti2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@ int	ret_err(const char *msg)
 {
 	std::cerr << msg << std::endl;
 	return 1;
-}
-
-std::map<std::string, float>	parse_input(std::ifstream& input)
-{
-	std::map<std::string, float>	minput;
-
-	
 }
 
 void	print_bitcoin(std::ifstream& input, std::ifstream& data)
@@ -61,6 +54,20 @@ bool	is_valid_date(std::string date)
 	
 }
 
+bool	parse_input(std::ifstream& input, std::map<std::string, float>& minput)
+{
+	std::string line;
+
+	while (std::getline(input, line))
+	{
+		if (line.find('|') == std::string::npos)
+			return false;
+		if ()
+	}
+
+	
+}
+
 
 int main(int argc, char **argv)
 {
@@ -77,5 +84,6 @@ int main(int argc, char **argv)
 		return ret_err("Error: could not open file.");
 
 	std::map<std::string, float> map_input = parse_input(input);
+	std::map<std::string, float> map_data = parse_data(data);
 	print_bitcoin(input, data);
 }

@@ -16,4 +16,8 @@ csv parse date
 - if saved to map, check that the last date saved is < this one
 
 input Parsing
-- 
+- getline
+- find |
+- check that it has spaces on both sides
+- parse date
+- parse float (between 0 and 1000. int or float)
