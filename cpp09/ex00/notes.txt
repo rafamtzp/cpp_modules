@@ -1,0 +1,19 @@
+Parsing
+
+CSV
+- getline
+- find comma
+- parse date
+- parse float
+
+csv parse date
+- check that first 4 are digits
+- check that yyyy is within [2009, 2022]
+- check that there's a - at pos 4 (really 5)
+- check that there's two digits at 5 and 6
+- check for other dash at 7
+- check for two digits at 8 and 9
+- if saved to map, check that the last date saved is < this one
+
+input Parsing
+- 
