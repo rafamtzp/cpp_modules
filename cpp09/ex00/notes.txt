@@ -21,3 +21,28 @@ input Parsing
 - check that it has spaces on both sides
 - parse date
 - parse float (between 0 and 1000. int or float)
+
+
+bool	grater_than_prev_date(std::string date, std::string prev)
+{
+	int pos = 0;
+	int incr = 4;
+
+	int quantity1;
+	int quantity2;
+
+	while (pos < 10)
+	{
+		quantity1 = std::atoi(prev.substr(pos, incr).c_str());
+		quantity2 = std::atoi(date.substr(pos, incr).c_str());
+		
+		if (quantity2 < quantity1)
+			return false;
+		if (quantity2 > quantity1)
+			return true;
+		
+		pos += (incr + 1);
+		incr = 2;
+	}
+	return false;
+}
