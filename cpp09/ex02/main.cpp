@@ -6,18 +6,11 @@
 /*   By: ramarti2 <ramarti2@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 10:54:35 by ramarti2          #+#    #+#             */
-/*   Updated: 2026/07/21 15:44:24 by ramarti2         ###   ########.fr       */
+/*   Updated: 2026/07/21 15:47:54 by ramarti2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <sstream>
-#include <climits>
-#include <cstdlib>
-#include <cerrno>
-#include <vector>
-#include <deque>
-#include <sys/time.h>
+#include "PmergeMe.hpp"
 
 int retErr(const char *msg)
 {
@@ -67,19 +60,19 @@ void    printCont(const C& cont, bool before)
 template <typename C>
 void sortCont(C& cont)
 {
-    (void)cont;
+    
 }
-#include <unistd.h>
 
 void    sortWrapper(std::deque<int>& deque, std::vector<int>& vec)
 {
     struct timeval t1, t2;
 
     printCont(vec, true);
+
     gettimeofday(&t1, NULL);
-    sleep(1); // sort vec
     sortCont(vec);
     gettimeofday(&t2, NULL);
+
     printCont(vec, false);
     std::cout << "Time taken to process a range of " << vec.size() << " elements with std::vector<int> : " 
      << (t2.tv_usec - t1.tv_usec) << " us" << std::endl;
