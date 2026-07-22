@@ -6,7 +6,7 @@
 /*   By: ramarti2 <ramarti2@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 15:09:06 by ramarti2          #+#    #+#             */
-/*   Updated: 2026/07/07 16:17:11 by ramarti2         ###   ########.fr       */
+/*   Updated: 2026/07/22 14:00:52 by ramarti2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,15 @@ bool	is_valid_date(std::string date, btcmap &mdata, bool isinput)
 	month = std::atoi(date.substr(5, 2).c_str());
 	day = std::atoi(date.substr(8, 2).c_str());
 
+	int monthDays[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
 	if (year < 2009 || year > 2022)
 		return (false);
-	if (month < 1 || month > 12)
+	if (month < 1 || month > 12 || day < 1)
 		return (false);
-	if (day < 1 || day > 31)
+	if (year % 4 == 0)
+		monthDays[1]++;
+	if (day > monthDays[month - 1])
 		return (false);
 
 	// if storing database in map and there's a stored date that is >= this date, not valid.
